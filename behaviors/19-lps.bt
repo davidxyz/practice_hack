@@ -17,6 +17,7 @@
         "args": [
             [
                 "() => {",
+                "",
                 "\tlet jibo = require('jibo');\t",
                 "\tlet entity = jibo.lps.getClosestVisualEntity();",
                 "",
@@ -38,9 +39,10 @@
                 "\telse {",
                 "\t\t\tposition = {x: 0.5, y: 0.1, z: 0.4}",
                 "\t}",
-                "\tif(position.z<0.5){",
+                "\tif(position.z<0.2){",
                 "\t\tconsole.log(position.z);",
-                "\t\t emitter.emit('fallen');",
+                "\t\tnotepad.stop=true;",
+                "\t\t return position;",
                 "\t }",
                 "\treturn position;",
                 "}"
@@ -48,7 +50,10 @@
             true,
             [
                 "(lookAt) => {",
-                "",
+                "  if(notepad.stop){",
+                "    lookAt = false;",
+                "  return lookAt;",
+                "}",
                 "}"
             ]
         ]

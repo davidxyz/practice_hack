@@ -6,45 +6,10 @@
         "asset-pack": "core",
         "args": [],
         "children": [
-            15,
+            26,
             23
         ],
         "decorators": []
-    },
-    "15": {
-        "id": 15,
-        "class": "Subtree",
-        "name": "",
-        "asset-pack": "core",
-        "parent": 1,
-        "args": [
-            "19-lps.bt",
-            [
-                "() => {",
-                "    return {};",
-                "}"
-            ],
-            [
-                "(treeResult) => {",
-                "}"
-            ]
-        ],
-        "decorators": [
-            22
-        ]
-    },
-    "22": {
-        "id": 22,
-        "class": "SucceedOnEvent",
-        "name": "",
-        "asset-pack": "core",
-        "args": [
-            "fallen",
-            [
-                "() => {",
-                "}"
-            ]
-        ]
     },
     "23": {
         "id": 23,
@@ -56,6 +21,85 @@
             "are you okay?",
             [
                 "(word) => {",
+                "}"
+            ]
+        ]
+    },
+    "26": {
+        "id": 26,
+        "class": "LookAt",
+        "name": "",
+        "asset-pack": "core",
+        "parent": 1,
+        "args": [
+            [
+                "() => {",
+                "",
+                "    let jibo = require('jibo');\t",
+                "    let entity = jibo.lps.getClosestVisualEntity();",
+                "",
+                "    let position = {x:.5, y:.1, z:.4};",
+                "",
+                "    if (entity && entity.parts.length > 0) {",
+                "      let raysData = entity.parts[0].value.rays;",
+                "",
+                "      if (raysData !== undefined && raysData.length > 0) {",
+                "",
+                "        let origin = entity.parts[0].value.rays[0].origin;",
+                "        let dir = entity.parts[0].value.rays[0].dir;",
+                "        ",
+                "        position\t= {x: dir.x + origin.x, y:dir.y + origin.y, z: dir.z + origin.z};",
+                "        ",
+                "        ",
+                "      }",
+                "    }",
+                "    else {",
+                "        position = {x: 0.5, y: 0.1, z: 0.4}",
+                "    }",
+                "    if(position.z<0.2){",
+                "      console.log(position.z);",
+                "      emitter.emit(\"fallen\");",
+                "",
+                "     }",
+                "    return position;",
+                "}"
+            ],
+            true,
+            [
+                "(lookAt) => {",
+                "}"
+            ]
+        ],
+        "decorators": [
+            28,
+            27
+        ]
+    },
+    "27": {
+        "id": 27,
+        "class": "SucceedOnEvent",
+        "name": "",
+        "asset-pack": "core",
+        "args": [
+            "fallen",
+            [
+                "() => {",
+                "}"
+            ]
+        ]
+    },
+    "28": {
+        "id": 28,
+        "class": "SucceedOnEmbedded",
+        "name": "",
+        "asset-pack": "core",
+        "args": [
+            "hey_jibo",
+            [
+                "(listener) => {",
+                "\tlistener.on('hey-jibo', (asrResult, speakerIds) => {",
+                "",
+                "\t});",
                 "}"
             ]
         ]
