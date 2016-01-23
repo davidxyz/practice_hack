@@ -1,0 +1,234 @@
+{
+    "version": "0.5.0",
+    "framerate": 30,
+    "duration": 800,
+    "scale": 1,
+    "layers": [
+        {
+            "id": "4f53a702eb4c4a48bd911b620110cdcd",
+            "name": "Eye",
+            "type": "Eye",
+            "visible": true,
+            "locked": false,
+            "keyframes": [
+                {
+                    "value": {
+                        "Rotate": 0,
+                        "Scale": {
+                            "x": 1,
+                            "y": 1
+                        },
+                        "Translate": {
+                            "x": -29.203882578757742,
+                            "y": 697.4056632373334
+                        },
+                        "Tween": {
+                            "display": "sine in out",
+                            "label": "Sine Ease In Out",
+                            "value": "sineInOut"
+                        },
+                        "Vertex 1": {
+                            "x": -300,
+                            "y": -300
+                        },
+                        "Vertex 2": {
+                            "x": 0,
+                            "y": -300
+                        },
+                        "Vertex 3": {
+                            "x": 300,
+                            "y": -300
+                        },
+                        "Vertex 4": {
+                            "x": -300,
+                            "y": 0
+                        },
+                        "Vertex 5": {
+                            "x": 0,
+                            "y": 0
+                        },
+                        "Vertex 6": {
+                            "x": 300,
+                            "y": 0
+                        },
+                        "Vertex 7": {
+                            "x": -300,
+                            "y": 300
+                        },
+                        "Vertex 8": {
+                            "x": 0,
+                            "y": 300
+                        },
+                        "Vertex 9": {
+                            "x": 300,
+                            "y": 300
+                        }
+                    },
+                    "time": 0
+                }
+            ]
+        },
+        {
+            "id": "aac3896b4d44471bbcea8da82e8ea6dd",
+            "name": "Eye Texture",
+            "type": "Eye Texture",
+            "visible": true,
+            "locked": false,
+            "keyframes": []
+        },
+        {
+            "id": "0d56f69cbefa40dd8432806ffb7c7a75",
+            "name": "Overlay",
+            "type": "Overlay",
+            "visible": false,
+            "locked": false,
+            "keyframes": []
+        },
+        {
+            "id": "b2ff0c8a5906462d85071dd772d412ce",
+            "name": "Overlay Texture",
+            "type": "Overlay Texture",
+            "visible": false,
+            "locked": false,
+            "keyframes": []
+        },
+        {
+            "id": "681ac83c98f245929ea8d91e983fabeb",
+            "name": "Background Texture",
+            "type": "Background Texture",
+            "visible": true,
+            "locked": false,
+            "keyframes": [
+                {
+                    "value": {
+                        "Texture": "animations/textures/images/image4163.png",
+                        "Color": {
+                            "r": 255,
+                            "g": 255,
+                            "b": 255
+                        }
+                    },
+                    "time": 0
+                },
+                {
+                    "value": {
+                        "Texture": "animations/textures/images/fam_pic_0.png",
+                        "Color": {
+                            "r": 255,
+                            "g": 255,
+                            "b": 255
+                        }
+                    },
+                    "time": 100
+                },
+                {
+                    "value": {
+                        "Texture": "animations/textures/images/fam_pic_2.png",
+                        "Color": {
+                            "r": 255,
+                            "g": 255,
+                            "b": 255
+                        }
+                    },
+                    "time": 220
+                },
+                {
+                    "value": {
+                        "Texture": "animations/textures/images/fam_pic_3.png",
+                        "Color": {
+                            "r": 255,
+                            "g": 255,
+                            "b": 255
+                        }
+                    },
+                    "time": 350
+                },
+                {
+                    "value": {
+                        "Texture": "animations/textures/images/fam_pic_4.png",
+                        "Color": {
+                            "r": 255,
+                            "g": 255,
+                            "b": 255
+                        }
+                    },
+                    "time": 500
+                },
+                {
+                    "value": {
+                        "Texture": "animations/textures/images/fam_pic_5.png",
+                        "Color": {
+                            "r": 255,
+                            "g": 255,
+                            "b": 255
+                        }
+                    },
+                    "time": 710
+                }
+            ]
+        },
+        {
+            "id": "7e921fcd74f84b3f94f559261b565db7",
+            "name": "Event",
+            "type": "Event",
+            "visible": true,
+            "locked": false,
+            "keyframes": [
+                {
+                    "value": {
+                        "Event": {
+                            "name": "karen",
+                            "payload": ""
+                        }
+                    },
+                    "time": 0
+                },
+                {
+                    "value": {
+                        "Event": {
+                            "name": "fam",
+                            "payload": ""
+                        }
+                    },
+                    "time": 100
+                },
+                {
+                    "value": {
+                        "Event": {
+                            "name": "brian",
+                            "payload": ""
+                        }
+                    },
+                    "time": 220
+                },
+                {
+                    "value": {
+                        "Event": {
+                            "name": "lisa",
+                            "payload": ""
+                        }
+                    },
+                    "time": 350
+                },
+                {
+                    "value": {
+                        "Event": {
+                            "name": "ann",
+                            "payload": ""
+                        }
+                    },
+                    "time": 500
+                },
+                {
+                    "value": {
+                        "Event": {
+                            "name": "angela",
+                            "payload": ""
+                        }
+                    },
+                    "time": 710
+                }
+            ]
+        }
+    ]
+}

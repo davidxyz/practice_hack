@@ -1,0 +1,157 @@
+{
+    "1": {
+        "id": 1,
+        "class": "Sequence",
+        "name": "",
+        "asset-pack": "core",
+        "args": [],
+        "children": [
+            26,
+            27,
+            29
+        ],
+        "decorators": []
+    },
+    "26": {
+        "id": 26,
+        "class": "TextToSpeech",
+        "name": "",
+        "asset-pack": "core",
+        "parent": 1,
+        "args": [
+            "do you like puppies?",
+            [
+                "(word) => {",
+                "}"
+            ]
+        ]
+    },
+    "27": {
+        "id": 27,
+        "class": "Listen",
+        "name": "",
+        "asset-pack": "core",
+        "parent": 1,
+        "args": [
+            [
+                "() => {",
+                "    let options = {",
+                "        heyJibo: false,",
+                "        detectEnd: false,",
+                "        incremental: false,",
+                "        authenticateSpeaker: ''",
+                "    }",
+                "    return options;",
+                "}"
+            ],
+            "yes-no.rule",
+            [
+                "(listener) => {",
+                "    listener.on('cloud', (asrResult, speakerIds) => {",
+                "      notepad.NLresult = arsResult.NLParse.word;",
+                "    });",
+                "}"
+            ]
+        ],
+        "decorators": [
+            28
+        ]
+    },
+    "28": {
+        "id": 28,
+        "class": "TimeoutSucceed",
+        "name": "",
+        "asset-pack": "core",
+        "args": [
+            6000
+        ]
+    },
+    "29": {
+        "id": 29,
+        "class": "Switch",
+        "name": "",
+        "asset-pack": "core",
+        "parent": 1,
+        "args": [],
+        "children": [
+            31,
+            32,
+            33
+        ]
+    },
+    "31": {
+        "id": 31,
+        "class": "TextToSpeech",
+        "name": "",
+        "asset-pack": "core",
+        "parent": 29,
+        "args": [
+            "why the fuck not?",
+            [
+                "(word) => {",
+                "}"
+            ]
+        ],
+        "decorators": [
+            35
+        ]
+    },
+    "32": {
+        "id": 32,
+        "class": "TextToSpeech",
+        "name": "",
+        "asset-pack": "core",
+        "parent": 29,
+        "args": [
+            "good.",
+            [
+                "(word) => {",
+                "}"
+            ]
+        ],
+        "decorators": [
+            36
+        ]
+    },
+    "33": {
+        "id": 33,
+        "class": "TextToSpeech",
+        "name": "",
+        "asset-pack": "core",
+        "parent": 29,
+        "args": [
+            "i didn't hear you.",
+            [
+                "(word) => {",
+                "}"
+            ]
+        ],
+        "decorators": []
+    },
+    "35": {
+        "id": 35,
+        "class": "Case",
+        "name": "",
+        "asset-pack": "core",
+        "args": [
+            [
+                "() => {",
+                "  return notepad.NLresult === 'no';",
+                "}"
+            ]
+        ]
+    },
+    "36": {
+        "id": 36,
+        "class": "Case",
+        "name": "",
+        "asset-pack": "core",
+        "args": [
+            [
+                "() => {",
+                "  return notepad.NLresult === 'yes';",
+                "}"
+            ]
+        ]
+    }
+}

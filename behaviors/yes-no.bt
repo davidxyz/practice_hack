@@ -1,0 +1,129 @@
+{
+    "1": {
+        "id": 1,
+        "class": "Sequence",
+        "name": "",
+        "asset-pack": "core",
+        "args": [],
+        "children": [
+            19,
+            20,
+            21
+        ],
+        "decorators": []
+    },
+    "19": {
+        "id": 19,
+        "class": "TextToSpeech",
+        "name": "",
+        "asset-pack": "core",
+        "parent": 1,
+        "args": [
+            "Do you like puppies?",
+            [
+                "(word) => {",
+                "}"
+            ]
+        ]
+    },
+    "20": {
+        "id": 20,
+        "class": "Listen",
+        "name": "",
+        "asset-pack": "core",
+        "parent": 1,
+        "args": [
+            [
+                "() => {",
+                "    let options = {",
+                "        heyJibo: false,",
+                "        detectEnd: false,",
+                "        incremental: false,",
+                "        authenticateSpeaker: ''",
+                "    }",
+                "    return options;",
+                "}"
+            ],
+            "yes-no.rule",
+            [
+                "(listener) => {",
+                "    listener.on('cloud', (asrResult, speakerIds) => {",
+                "      notepad.NLresult = asrResult.NLParse.word;",
+                "    });",
+                "}"
+            ]
+        ]
+    },
+    "21": {
+        "id": 21,
+        "class": "Switch",
+        "name": "",
+        "asset-pack": "core",
+        "parent": 1,
+        "args": [],
+        "children": [
+            22,
+            24
+        ]
+    },
+    "22": {
+        "id": 22,
+        "class": "TextToSpeech",
+        "name": "",
+        "asset-pack": "core",
+        "parent": 21,
+        "args": [
+            "me too!",
+            [
+                "(word) => {",
+                "}"
+            ]
+        ],
+        "decorators": [
+            23
+        ]
+    },
+    "23": {
+        "id": 23,
+        "class": "Case",
+        "name": "",
+        "asset-pack": "core",
+        "args": [
+            [
+                "() => {",
+                "  return notepad.NLresult == 'yes';",
+                "}"
+            ]
+        ]
+    },
+    "24": {
+        "id": 24,
+        "class": "TextToSpeech",
+        "name": "",
+        "asset-pack": "core",
+        "parent": 21,
+        "args": [
+            "why?! they are soo cute!",
+            [
+                "(word) => {",
+                "}"
+            ]
+        ],
+        "decorators": [
+            25
+        ]
+    },
+    "25": {
+        "id": 25,
+        "class": "Case",
+        "name": "",
+        "asset-pack": "core",
+        "args": [
+            [
+                "() => {",
+                "  return notepad.NLresult == 'no'",
+                "}"
+            ]
+        ]
+    }
+}

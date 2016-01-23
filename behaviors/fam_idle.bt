@@ -1,0 +1,87 @@
+{
+    "1": {
+        "id": 1,
+        "class": "Parallel",
+        "name": "",
+        "asset-pack": "core",
+        "args": [
+            false
+        ],
+        "children": [
+            4,
+            8
+        ]
+    },
+    "4": {
+        "id": 4,
+        "class": "Subtree",
+        "name": "",
+        "asset-pack": "core",
+        "parent": 1,
+        "args": [
+            "20-lps-asr.bt",
+            [
+                "() => {",
+                "    return {};",
+                "}"
+            ],
+            [
+                "(treeResult) => {",
+                "}"
+            ]
+        ]
+    },
+    "8": {
+        "id": 8,
+        "class": "PlayAnimation",
+        "name": "",
+        "asset-pack": "core",
+        "parent": 1,
+        "args": [
+            "family_photos.keys",
+            [
+                "(animation) => {",
+                "}"
+            ]
+        ],
+        "decorators": [
+            10,
+            9
+        ]
+    },
+    "9": {
+        "id": 9,
+        "class": "WhileCondition",
+        "name": "",
+        "asset-pack": "core",
+        "args": [
+            [
+                "() => {",
+                "  notepad.slideshow = true;",
+                "}"
+            ],
+            [
+                "() => {",
+                "    return notepad.slideshow;",
+                "}"
+            ]
+        ]
+    },
+    "10": {
+        "id": 10,
+        "class": "FailOnCondition",
+        "name": "",
+        "asset-pack": "core",
+        "args": [
+            [
+                "() => {",
+                "}"
+            ],
+            [
+                "() => {",
+                "  return !notepad.slideshow;",
+                "}"
+            ]
+        ]
+    }
+}

@@ -1,0 +1,98 @@
+{
+    "1": {
+        "id": 1,
+        "class": "Sequence",
+        "name": "",
+        "asset-pack": "core",
+        "args": [],
+        "children": [
+            37,
+            38,
+            39,
+            41
+        ],
+        "decorators": []
+    },
+    "37": {
+        "id": 37,
+        "class": "TextToSpeech",
+        "name": "",
+        "asset-pack": "core",
+        "parent": 1,
+        "args": [
+            "do you like puppies?",
+            [
+                "(word) => {",
+                "}"
+            ]
+        ]
+    },
+    "38": {
+        "id": 38,
+        "class": "Listen",
+        "name": "",
+        "asset-pack": "core",
+        "parent": 1,
+        "args": [
+            [
+                "() => {",
+                "    let options = {",
+                "        heyJibo: false,",
+                "        detectEnd: true,",
+                "        incremental: false,",
+                "        authenticateSpeaker: ''",
+                "    }",
+                "    return options;",
+                "}"
+            ],
+            "yes-no.rule",
+            [
+                "(listener) => {",
+                "    listener.on('cloud', (asrResult, speakerIds) => {",
+                "      notepad.NLresult = asrResult.NLParse.word;",
+                "      ",
+                "    });",
+                "    listenenr.on('end', (asrResult,speakerIds) => {",
+                "      notepad.heardEnd = true;",
+                "    });",
+                "}"
+            ]
+        ]
+    },
+    "39": {
+        "id": 39,
+        "class": "Blink",
+        "name": "",
+        "asset-pack": "core",
+        "parent": 1,
+        "args": [],
+        "decorators": [
+            40
+        ]
+    },
+    "40": {
+        "id": 40,
+        "class": "StartOnCondition",
+        "name": "",
+        "asset-pack": "core",
+        "args": [
+            [
+                "() => {",
+                "  return notepad.heardEnd;",
+                "}"
+            ],
+            [
+                "() => {",
+                "}"
+            ]
+        ]
+    },
+    "41": {
+        "id": 41,
+        "class": "Switch",
+        "name": "",
+        "asset-pack": "core",
+        "parent": 1,
+        "args": []
+    }
+}

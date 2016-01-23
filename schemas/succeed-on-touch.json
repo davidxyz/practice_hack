@@ -1,0 +1,14 @@
+{
+  "SucceedOnTouch": {
+    "description": "Forces a behavior to succeed when Jibo's face is touched.",
+    "type": "decorator",
+    "args": ["function"],
+    "meta": [
+        {
+            "field": "onTouch",
+            "description": "Called when Jibo's face is touched",
+            "defaultValue": "() => {\n}"
+        }
+    ]
+  }
+}

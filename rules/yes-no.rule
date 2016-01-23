@@ -1,0 +1,2 @@
+TopRule = $* ( $answer {word = answer._nl} )$*;
+answer = $factory:yes_no{_nl = yes_no._nl};

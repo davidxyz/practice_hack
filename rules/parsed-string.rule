@@ -1,0 +1,7 @@
+TopRule = $* (
+    $flight {book='air'} |
+    $hotel {book='lodging'}
+    ) for $person;
+    flight = reserve $* flight;
+    hotel = reserve $* hotel;
+    person = (+$w){name=_parsed};

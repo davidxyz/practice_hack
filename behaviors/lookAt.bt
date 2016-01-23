@@ -1,0 +1,50 @@
+{
+    "1": {
+        "id": 1,
+        "class": "Sequence",
+        "name": "",
+        "args": [],
+        "children": [
+            2,
+            3
+        ]
+    },
+    "2": {
+        "id": 2,
+        "class": "LookAt",
+        "name": "",
+        "asset-pack": "core",
+        "parent": 1,
+        "args": [
+            [
+                "() => {",
+                "    return {x: 1, y: 1, z: 1};",
+                "}"
+            ],
+            false,
+            [
+                "(lookAt) => {",
+                "}"
+            ]
+        ]
+    },
+    "3": {
+        "id": 3,
+        "class": "LookAt",
+        "name": "",
+        "asset-pack": "core",
+        "parent": 1,
+        "args": [
+            [
+                "() => {",
+                "    return {x: 1, y: -1, z: 1};",
+                "}"
+            ],
+            false,
+            [
+                "(lookAt) => {",
+                "}"
+            ]
+        ]
+    }
+}
