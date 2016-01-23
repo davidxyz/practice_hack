@@ -129,29 +129,9 @@
         "parent": 29,
         "args": [],
         "children": [
-            33,
             17,
             23,
             21
-        ]
-    },
-    "33": {
-        "id": 33,
-        "class": "Subtree",
-        "name": "",
-        "asset-pack": "core",
-        "parent": 32,
-        "args": [
-            "luke_fallen",
-            [
-                "() => {",
-                "    return {};",
-                "}"
-            ],
-            [
-                "(treeResult) => {",
-                "}"
-            ]
         ]
     }
 }

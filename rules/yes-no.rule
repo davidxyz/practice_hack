@@ -2,5 +2,5 @@ TopRule = $* ( $answer {word = answer._nl}|
      $other_yes{word = 'yes'} |
      $other_no{word = 'no'} ) $*;
 answer = $factory:yes_no{_nl = yes_no._nl};
-other_yes = ((im fine) | yeah | help);
-other_no = ((im not fine) );
+other_yes = ((im fine) | yeah );
+other_no = ((im not fine) | help| no);

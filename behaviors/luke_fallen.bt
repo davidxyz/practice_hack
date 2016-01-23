@@ -7,9 +7,7 @@
         "args": [],
         "children": [
             26,
-            33,
-            30,
-            32
+            33
         ],
         "decorators": []
     },
@@ -18,7 +16,7 @@
         "class": "TextToSpeech",
         "name": "",
         "asset-pack": "core",
-        "parent": 33,
+        "parent": 41,
         "args": [
             "are you okay?",
             [
@@ -122,7 +120,7 @@
         "class": "Listen",
         "name": "",
         "asset-pack": "core",
-        "parent": 1,
+        "parent": 41,
         "args": [
             [
                 "() => {",
@@ -145,16 +143,7 @@
             ]
         ],
         "decorators": [
-            31
-        ]
-    },
-    "31": {
-        "id": 31,
-        "class": "TimeoutSucceed",
-        "name": "",
-        "asset-pack": "core",
-        "args": [
-            10000
+            39
         ]
     },
     "32": {
@@ -162,7 +151,7 @@
         "class": "ExecuteScript",
         "name": "",
         "asset-pack": "core",
-        "parent": 1,
+        "parent": 33,
         "args": [
             [
                 "() => {",
@@ -177,30 +166,121 @@
     },
     "33": {
         "id": 33,
-        "class": "Parallel",
+        "class": "Sequence",
         "name": "",
         "asset-pack": "core",
         "parent": 1,
-        "args": [
-            false
-        ],
+        "args": [],
         "children": [
-            34,
-            23
-        ]
+            42,
+            41,
+            35,
+            32
+        ],
+        "decorators": []
     },
     "34": {
         "id": 34,
         "class": "PlayAnimation",
         "name": "",
         "asset-pack": "core",
-        "parent": 33,
+        "parent": 41,
         "args": [
             "worried.keys",
             [
                 "(animation) => {",
                 "}"
             ]
+        ]
+    },
+    "35": {
+        "id": 35,
+        "class": "Switch",
+        "name": "",
+        "asset-pack": "core",
+        "parent": 33,
+        "args": [],
+        "children": [
+            36
+        ]
+    },
+    "36": {
+        "id": 36,
+        "class": "Subtree",
+        "name": "",
+        "asset-pack": "core",
+        "parent": 35,
+        "args": [
+            "main_luke",
+            [
+                "() => {",
+                "    return {};",
+                "}"
+            ],
+            [
+                "(treeResult) => {",
+                "}"
+            ]
+        ],
+        "decorators": [
+            37
+        ]
+    },
+    "37": {
+        "id": 37,
+        "class": "Case",
+        "name": "",
+        "asset-pack": "core",
+        "args": [
+            [
+                "() => {",
+                "  return notepad.NLresult==='no' || notepad.NLresult===null;",
+                "}"
+            ]
+        ]
+    },
+    "39": {
+        "id": 39,
+        "class": "TimeoutSucceed",
+        "name": "",
+        "asset-pack": "core",
+        "args": [
+            10000
+        ]
+    },
+    "41": {
+        "id": 41,
+        "class": "Parallel",
+        "name": "",
+        "asset-pack": "core",
+        "parent": 33,
+        "args": [
+            false
+        ],
+        "children": [
+            23,
+            34,
+            30
+        ]
+    },
+    "42": {
+        "id": 42,
+        "class": "Null",
+        "name": "",
+        "asset-pack": "core",
+        "parent": 33,
+        "args": [],
+        "decorators": [
+            43
+        ]
+    },
+    "43": {
+        "id": 43,
+        "class": "TimeoutSucceed",
+        "name": "",
+        "asset-pack": "core",
+        "args": [
+            10000
         ]
     }
 }
