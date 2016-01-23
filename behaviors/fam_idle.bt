@@ -10,6 +10,9 @@
         "children": [
             4,
             8
+        ],
+        "decorators": [
+            11
         ]
     },
     "4": {
@@ -19,7 +22,7 @@
         "asset-pack": "core",
         "parent": 1,
         "args": [
-            "20-lps-asr.bt",
+            "19-lps.bt",
             [
                 "() => {",
                 "    return {};",
@@ -75,6 +78,24 @@
         "args": [
             [
                 "() => {",
+                "}"
+            ],
+            [
+                "() => {",
+                "  return !notepad.slideshow;",
+                "}"
+            ]
+        ]
+    },
+    "11": {
+        "id": 11,
+        "class": "SucceedOnCondition",
+        "name": "",
+        "asset-pack": "core",
+        "args": [
+            [
+                "() => {",
+                "",
                 "}"
             ],
             [
