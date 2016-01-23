@@ -1,0 +1,157 @@
+{
+    "1": {
+        "id": 1,
+        "class": "Parallel",
+        "name": "",
+        "asset-pack": "core",
+        "args": [
+            false
+        ],
+        "children": [
+            29
+        ],
+        "decorators": []
+    },
+    "17": {
+        "id": 17,
+        "class": "Parallel",
+        "name": "",
+        "asset-pack": "core",
+        "parent": 32,
+        "args": [
+            false
+        ],
+        "children": [
+            20,
+            18
+        ]
+    },
+    "18": {
+        "id": 18,
+        "class": "TextToSpeech",
+        "name": "",
+        "asset-pack": "core",
+        "parent": 17,
+        "args": [
+            "Okay, I'm going to call your emergency contacts now",
+            [
+                "(word) => {",
+                "}"
+            ]
+        ]
+    },
+    "20": {
+        "id": 20,
+        "class": "PlayAnimation",
+        "name": "",
+        "asset-pack": "core",
+        "parent": 17,
+        "args": [
+            "calling.keys",
+            [
+                "(animation) => {",
+                "}"
+            ]
+        ]
+    },
+    "21": {
+        "id": 21,
+        "class": "Parallel",
+        "name": "",
+        "asset-pack": "core",
+        "parent": 32,
+        "args": [
+            false
+        ],
+        "children": [
+            25,
+            22
+        ]
+    },
+    "22": {
+        "id": 22,
+        "class": "TextToSpeech",
+        "name": "",
+        "asset-pack": "core",
+        "parent": 21,
+        "args": [
+            "calling",
+            [
+                "(word) => {",
+                "}"
+            ]
+        ]
+    },
+    "23": {
+        "id": 23,
+        "class": "TimeoutJs",
+        "name": "",
+        "asset-pack": "core",
+        "parent": 32,
+        "args": [
+            [
+                "() => {",
+                "    return 1000;",
+                "}"
+            ]
+        ]
+    },
+    "25": {
+        "id": 25,
+        "class": "PlayAnimation",
+        "name": "",
+        "asset-pack": "core",
+        "parent": 21,
+        "args": [
+            "phone.keys",
+            [
+                "(animation) => {",
+                "}"
+            ]
+        ]
+    },
+    "29": {
+        "id": 29,
+        "class": "Sequence",
+        "name": "",
+        "asset-pack": "core",
+        "parent": 1,
+        "args": [],
+        "children": [
+            32
+        ]
+    },
+    "32": {
+        "id": 32,
+        "class": "Sequence",
+        "name": "",
+        "asset-pack": "core",
+        "parent": 29,
+        "args": [],
+        "children": [
+            33,
+            17,
+            23,
+            21
+        ]
+    },
+    "33": {
+        "id": 33,
+        "class": "Subtree",
+        "name": "",
+        "asset-pack": "core",
+        "parent": 32,
+        "args": [
+            "luke_fallen",
+            [
+                "() => {",
+                "    return {};",
+                "}"
+            ],
+            [
+                "(treeResult) => {",
+                "}"
+            ]
+        ]
+    }
+}

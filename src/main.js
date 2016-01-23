@@ -3,7 +3,7 @@ let {Status, factory} = jibo.bt;
 
 
 function start() {
-    let root = factory.create('../behaviors/luke_fallen');
+    let root = factory.create('../behaviors/main_luke');
     root.start();
     let intervalId = setInterval(() => {
         if (root.status !== Status.IN_PROGRESS) {

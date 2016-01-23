@@ -7,7 +7,9 @@
         "args": [],
         "children": [
             26,
-            23
+            33,
+            30,
+            32
         ],
         "decorators": []
     },
@@ -16,7 +18,7 @@
         "class": "TextToSpeech",
         "name": "",
         "asset-pack": "core",
-        "parent": 1,
+        "parent": 33,
         "args": [
             "are you okay?",
             [
@@ -71,7 +73,7 @@
             ]
         ],
         "decorators": [
-            28,
+            29,
             27
         ]
     },
@@ -88,18 +90,115 @@
             ]
         ]
     },
-    "28": {
-        "id": 28,
-        "class": "SucceedOnEmbedded",
+    "29": {
+        "id": 29,
+        "class": "SucceedOnListen",
         "name": "",
         "asset-pack": "core",
         "args": [
-            "hey_jibo",
+            [
+                "() => {",
+                "    let options = {",
+                "        heyJibo: false,",
+                "        detectEnd: false,",
+                "        incremental: false,",
+                "        authenticateSpeaker: ''",
+                "    }",
+                "    return options;",
+                "}"
+            ],
+            "hurt.rule",
             [
                 "(listener) => {",
-                "\tlistener.on('hey-jibo', (asrResult, speakerIds) => {",
+                "    listener.on('cloud', (asrResult, speakerIds) => {",
                 "",
-                "\t});",
+                "    });",
+                "}"
+            ]
+        ]
+    },
+    "30": {
+        "id": 30,
+        "class": "Listen",
+        "name": "",
+        "asset-pack": "core",
+        "parent": 1,
+        "args": [
+            [
+                "() => {",
+                "    let options = {",
+                "        heyJibo: false,",
+                "        detectEnd: false,",
+                "        incremental: false,",
+                "        authenticateSpeaker: ''",
+                "    }",
+                "    return options;",
+                "}"
+            ],
+            "yes-no.rule",
+            [
+                "(listener) => {",
+                "    listener.on('cloud', (asrResult, speakerIds) => {",
+                "      notepad.NLresult = asrResult.NLParse.word;",
+                "    });",
+                "}"
+            ]
+        ],
+        "decorators": [
+            31
+        ]
+    },
+    "31": {
+        "id": 31,
+        "class": "TimeoutSucceed",
+        "name": "",
+        "asset-pack": "core",
+        "args": [
+            10000
+        ]
+    },
+    "32": {
+        "id": 32,
+        "class": "ExecuteScript",
+        "name": "",
+        "asset-pack": "core",
+        "parent": 1,
+        "args": [
+            [
+                "() => {",
+                "  if(notepad.NLresult==='yes'){",
+                "    console.log(\"back to idle\");",
+                "  }else{",
+                "      console.log(\"calling emergency contact\");",
+                "  }",
+                "}"
+            ]
+        ]
+    },
+    "33": {
+        "id": 33,
+        "class": "Parallel",
+        "name": "",
+        "asset-pack": "core",
+        "parent": 1,
+        "args": [
+            false
+        ],
+        "children": [
+            34,
+            23
+        ]
+    },
+    "34": {
+        "id": 34,
+        "class": "PlayAnimation",
+        "name": "",
+        "asset-pack": "core",
+        "parent": 33,
+        "args": [
+            "worried.keys",
+            [
+                "(animation) => {",
                 "}"
             ]
         ]

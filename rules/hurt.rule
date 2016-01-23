@@ -1,0 +1,2 @@
+TopRule = $* $injury {what = 'hurt'} $*;
+injury = ((im hurt) | help| ouch);
