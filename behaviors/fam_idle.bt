@@ -48,7 +48,6 @@
             ]
         ],
         "decorators": [
-            10,
             9
         ]
     },
@@ -66,23 +65,6 @@
             [
                 "() => {",
                 "    return notepad.slideshow;",
-                "}"
-            ]
-        ]
-    },
-    "10": {
-        "id": 10,
-        "class": "FailOnCondition",
-        "name": "",
-        "asset-pack": "core",
-        "args": [
-            [
-                "() => {",
-                "}"
-            ],
-            [
-                "() => {",
-                "  return !notepad.slideshow;",
                 "}"
             ]
         ]
