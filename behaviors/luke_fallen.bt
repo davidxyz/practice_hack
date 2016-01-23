@@ -1,0 +1,63 @@
+{
+    "1": {
+        "id": 1,
+        "class": "Sequence",
+        "name": "",
+        "asset-pack": "core",
+        "args": [],
+        "children": [
+            15,
+            23
+        ],
+        "decorators": []
+    },
+    "15": {
+        "id": 15,
+        "class": "Subtree",
+        "name": "",
+        "asset-pack": "core",
+        "parent": 1,
+        "args": [
+            "19-lps.bt",
+            [
+                "() => {",
+                "    return {};",
+                "}"
+            ],
+            [
+                "(treeResult) => {",
+                "}"
+            ]
+        ],
+        "decorators": [
+            22
+        ]
+    },
+    "22": {
+        "id": 22,
+        "class": "SucceedOnEvent",
+        "name": "",
+        "asset-pack": "core",
+        "args": [
+            "fallen",
+            [
+                "() => {",
+                "}"
+            ]
+        ]
+    },
+    "23": {
+        "id": 23,
+        "class": "TextToSpeech",
+        "name": "",
+        "asset-pack": "core",
+        "parent": 1,
+        "args": [
+            "are you okay?",
+            [
+                "(word) => {",
+                "}"
+            ]
+        ]
+    }
+}

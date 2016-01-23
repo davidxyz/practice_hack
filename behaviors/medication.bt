@@ -1,0 +1,197 @@
+{
+    "1": {
+        "id": 1,
+        "class": "Sequence",
+        "name": "",
+        "args": [],
+        "children": [
+            3,
+            7
+        ]
+    },
+    "3": {
+        "id": 3,
+        "class": "Parallel",
+        "name": "",
+        "asset-pack": "core",
+        "parent": 1,
+        "args": [
+            false
+        ],
+        "children": [
+            11,
+            4
+        ]
+    },
+    "4": {
+        "id": 4,
+        "class": "Listen",
+        "name": "",
+        "asset-pack": "core",
+        "parent": 3,
+        "args": [
+            [
+                "() => {",
+                "    let options = {",
+                "        heyJibo: false,",
+                "        detectEnd: false,",
+                "        incremental: false,",
+                "        authenticateSpeaker: ''",
+                "    }",
+                "    return options;",
+                "}"
+            ],
+            "null",
+            [
+                "(listener) => {",
+                "    listener.on('hey-jibo', (asrResult, speakerIds) => {",
+                "        emitter.emit('listen')",
+                "    });",
+                "    listener.on('cloud', (asrResult, speakerIds) => {",
+                "        console.log(asrResult);",
+                "        notepad.results = asrResult.NLParse",
+                "    });",
+                "}"
+            ]
+        ]
+    },
+    "7": {
+        "id": 7,
+        "class": "Parallel",
+        "name": "",
+        "asset-pack": "core",
+        "parent": 1,
+        "args": [
+            false
+        ],
+        "children": [
+            14,
+            17,
+            23
+        ]
+    },
+    "8": {
+        "id": 8,
+        "class": "Subtree",
+        "name": "Idle",
+        "asset-pack": "core",
+        "parent": 11,
+        "args": [
+            "08-idle.bt",
+            [
+                "() => {",
+                "    return {};",
+                "}"
+            ],
+            [
+                "(treeResult) => {",
+                "}"
+            ]
+        ],
+        "decorators": [
+            13
+        ]
+    },
+    "11": {
+        "id": 11,
+        "class": "Sequence",
+        "name": "",
+        "asset-pack": "core",
+        "parent": 3,
+        "args": [],
+        "children": [
+            8,
+            33
+        ]
+    },
+    "13": {
+        "id": 13,
+        "class": "SucceedOnEvent",
+        "name": "",
+        "asset-pack": "core",
+        "args": [
+            "listen",
+            [
+                "() => {",
+                "}"
+            ]
+        ],
+        "parent": null
+    },
+    "14": {
+        "id": 14,
+        "class": "ExecuteScript",
+        "name": "Turn off LED",
+        "asset-pack": "core",
+        "parent": 7,
+        "args": [
+            [
+                "() => {",
+                "  console.log('SHUTTING OFF LED');",
+                "  jibo.animate.setLEDColor([0, 0, 0]);",
+                "}"
+            ]
+        ]
+    },
+    "17": {
+        "id": 17,
+        "class": "PlayAnimation",
+        "name": "Play acknowledgement",
+        "asset-pack": "core",
+        "parent": 7,
+        "args": [
+            "greeting.keys",
+            [
+                "(animation) => {",
+                "}"
+            ]
+        ]
+    },
+    "23": {
+        "id": 23,
+        "class": "TextToSpeechJs",
+        "name": "",
+        "asset-pack": "core",
+        "parent": 7,
+        "args": [
+            [
+                "(callback) => {",
+                "    if(notepad.results) {",
+                "        let results = notepad.results;",
+                "        let text = 'Sure I\\'ll book ' + results.book + ' to ' + results.city;",
+                "        if(results.state !== \"null\") {",
+                "            text += ' ' + results.state;",
+                "        }",
+                "        callback(text);",
+                "    }",
+                "    else {",
+                "        callback('Sorry didn\\'t understand that.');",
+                "    }",
+                "    ",
+                "}"
+            ],
+            [
+                "(word) => {",
+                "}"
+            ]
+        ]
+    },
+    "33": {
+        "id": 33,
+        "class": "ExecuteScriptAsync",
+        "name": "Globally Center Robot",
+        "asset-pack": "core",
+        "parent": 11,
+        "args": [
+            [
+                "(succeed, fail) => {",
+                "    let dofs = jibo.animate.dofs;",
+                "    jibo.animate.centerRobot(dofs.ALL, true, () => {",
+                "        jibo.animate.setLEDColor([0, 0, 1]);",
+                "        succeed();    ",
+                "    });",
+                "}"
+            ]
+        ]
+    }
+}

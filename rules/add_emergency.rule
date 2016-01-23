@@ -1,0 +1,7 @@
+ TopRule = $* (
+    $add_emergency_contact {level='emergency'} |
+    $add_normal_contact {level='normal'}
+    ) $person {contact=person._name};
+    add_emergency_contact = (add $* emergency contact);
+    add_normal_contact = (add $* contact);
+    person = (+$w){_name=_parsed};

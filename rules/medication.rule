@@ -1,0 +1,12 @@
+:TopRule = $* (
+    $medicationAdd {hour = medicationAdd._time_nl}
+    #$flight {book='air'} {city = flight._city}{state = flight._state} |
+    #$hotel  {book='lodging'} {city = hotel._city}{state = hotel._state}
+) $*;
+
+medicationAdd = $add $* medication $* $time {_time_nl = time._time_nl};
+#hotel = $reserve $* hotel $* $location {_city = location._city}{_state = location._state};
+
+time = $factory:time{_time_nl = time._time_nl};
+add = add | remind;
+meds = pills | medication | medicine | meds;
