@@ -101,7 +101,7 @@
             "keyframes": [
                 {
                     "value": {
-                        "Texture": "animations/textures/images/image4163.png",
+                        "Texture": "",
                         "Color": {
                             "r": 255,
                             "g": 255,
@@ -109,6 +109,17 @@
                         }
                     },
                     "time": 0
+                },
+                {
+                    "value": {
+                        "Texture": "animations/textures/images/fam_pic_5.png",
+                        "Color": {
+                            "r": 255,
+                            "g": 255,
+                            "b": 255
+                        }
+                    },
+                    "time": 1
                 },
                 {
                     "value": {
@@ -164,6 +175,17 @@
                         }
                     },
                     "time": 710
+                },
+                {
+                    "value": {
+                        "Texture": "",
+                        "Color": {
+                            "r": 255,
+                            "g": 255,
+                            "b": 255
+                        }
+                    },
+                    "time": 799
                 }
             ]
         },

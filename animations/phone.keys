@@ -1,7 +1,7 @@
 {
     "version": "0.5.0",
     "framerate": 30,
-    "duration": 90,
+    "duration": 180,
     "scale": 1,
     "layers": [
         {
@@ -85,6 +85,149 @@
                         }
                     },
                     "time": 0
+                },
+                {
+                    "value": {
+                        "Texture": "animations/textures/images/white-phone.png",
+                        "Color": {
+                            "r": 255,
+                            "g": 0,
+                            "b": 0
+                        }
+                    },
+                    "time": 15
+                },
+                {
+                    "value": {
+                        "Texture": "animations/textures/images/white-phone.png",
+                        "Color": {
+                            "r": 255,
+                            "g": 255,
+                            "b": 255
+                        }
+                    },
+                    "time": 30
+                },
+                {
+                    "value": {
+                        "Texture": "animations/textures/images/white-phone.png",
+                        "Color": {
+                            "r": 255,
+                            "g": 0,
+                            "b": 0
+                        }
+                    },
+                    "time": 45
+                },
+                {
+                    "value": {
+                        "Texture": "animations/textures/images/white-phone.png",
+                        "Color": {
+                            "r": 255,
+                            "g": 255,
+                            "b": 255
+                        }
+                    },
+                    "time": 60
+                },
+                {
+                    "value": {
+                        "Texture": "animations/textures/images/white-phone.png",
+                        "Color": {
+                            "r": 255,
+                            "g": 0,
+                            "b": 0
+                        }
+                    },
+                    "time": 75
+                },
+                {
+                    "value": {
+                        "Texture": "animations/textures/images/white-phone.png",
+                        "Color": {
+                            "r": 255,
+                            "g": 255,
+                            "b": 255
+                        }
+                    },
+                    "time": 89
+                },
+                {
+                    "value": {
+                        "Texture": "animations/textures/images/white-phone.png",
+                        "Color": {
+                            "r": 255,
+                            "g": 255,
+                            "b": 255
+                        }
+                    },
+                    "time": 90
+                },
+                {
+                    "value": {
+                        "Texture": "animations/textures/images/white-phone.png",
+                        "Color": {
+                            "r": 255,
+                            "g": 0,
+                            "b": 0
+                        }
+                    },
+                    "time": 105
+                },
+                {
+                    "value": {
+                        "Texture": "animations/textures/images/white-phone.png",
+                        "Color": {
+                            "r": 255,
+                            "g": 255,
+                            "b": 255
+                        }
+                    },
+                    "time": 120
+                },
+                {
+                    "value": {
+                        "Texture": "animations/textures/images/white-phone.png",
+                        "Color": {
+                            "r": 255,
+                            "g": 0,
+                            "b": 0
+                        }
+                    },
+                    "time": 135
+                },
+                {
+                    "value": {
+                        "Texture": "animations/textures/images/white-phone.png",
+                        "Color": {
+                            "r": 255,
+                            "g": 255,
+                            "b": 255
+                        }
+                    },
+                    "time": 150
+                },
+                {
+                    "value": {
+                        "Texture": "animations/textures/images/white-phone.png",
+                        "Color": {
+                            "r": 255,
+                            "g": 0,
+                            "b": 0
+                        }
+                    },
+                    "time": 165
+                },
+                {
+                    "value": {
+                        "Texture": "animations/textures/images/white-phone.png",
+                        "Color": {
+                            "r": 255,
+                            "g": 255,
+                            "b": 255
+                        }
+                    },
+                    "time": 179
                 }
             ]
         },
@@ -134,6 +277,46 @@
                         }
                     },
                     "time": 89
+                },
+                {
+                    "value": {
+                        "Color": {
+                            "r": 237,
+                            "g": 66,
+                            "b": 66
+                        }
+                    },
+                    "time": 90
+                },
+                {
+                    "value": {
+                        "Color": {
+                            "r": 255,
+                            "g": 255,
+                            "b": 255
+                        }
+                    },
+                    "time": 120
+                },
+                {
+                    "value": {
+                        "Color": {
+                            "r": 237,
+                            "g": 66,
+                            "b": 66
+                        }
+                    },
+                    "time": 150
+                },
+                {
+                    "value": {
+                        "Color": {
+                            "r": 255,
+                            "g": 255,
+                            "b": 255
+                        }
+                    },
+                    "time": 179
                 }
             ]
         }

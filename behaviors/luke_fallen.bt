@@ -6,10 +6,13 @@
         "asset-pack": "core",
         "args": [],
         "children": [
-            26,
+            44,
+            46,
             33
         ],
-        "decorators": []
+        "decorators": [
+            45
+        ]
     },
     "23": {
         "id": 23,
@@ -30,15 +33,14 @@
         "class": "LookAt",
         "name": "",
         "asset-pack": "core",
-        "parent": 1,
+        "parent": 46,
         "args": [
             [
                 "() => {",
                 "",
                 "    let jibo = require('jibo');\t",
                 "    let entity = jibo.lps.getClosestVisualEntity();",
-                "",
-                "    let position = {x:.5, y:.1, z:.4};",
+                "    let position = {x:.5, y:.1, z:.7};",
                 "",
                 "    if (entity && entity.parts.length > 0) {",
                 "      let raysData = entity.parts[0].value.rays;",
@@ -54,13 +56,19 @@
                 "      }",
                 "    }",
                 "    else {",
-                "        position = {x: 0.5, y: 0.1, z: 0.4}",
+                "        position = {x: 0.5, y: 0.1, z: 0.7}",
                 "    }",
-                "    if(position.z<0.2){",
-                "      console.log(position.z);",
-                "      emitter.emit(\"fallen\");",
-                "",
-                "     }",
+                "    if(position.z<=0.18){",
+                "      notepad.iter++;",
+                "      if(notepad.iter>=350){",
+                "        notepad.slideshow=false;",
+                "        emitter.emit(\"fallen\");    ",
+                "      }",
+                "      console.log(notepad.iter);",
+                "    }else{",
+                "      notepad.iter = 0;",
+                "    }",
+                "     console.log(position.z);",
                 "    return position;",
                 "}"
             ],
@@ -109,7 +117,10 @@
             [
                 "(listener) => {",
                 "    listener.on('cloud', (asrResult, speakerIds) => {",
-                "",
+                "        notepad.NLresult = asrResult.NLParse.what;",
+                "        if(asrResult.NLParse.what==='hurt'){",
+                "          emitter.emit(\"fallen\");",
+                "        }",
                 "    });",
                 "}"
             ]
@@ -172,7 +183,7 @@
         "parent": 1,
         "args": [],
         "children": [
-            42,
+            50,
             41,
             35,
             32
@@ -235,6 +246,7 @@
             [
                 "() => {",
                 "  return notepad.NLresult==='no' || notepad.NLresult===null;",
+                "  console.log(notepad.NLresult);",
                 "}"
             ]
         ]
@@ -263,24 +275,114 @@
             30
         ]
     },
-    "42": {
-        "id": 42,
-        "class": "Null",
+    "44": {
+        "id": 44,
+        "class": "ExecuteScript",
         "name": "",
         "asset-pack": "core",
-        "parent": 33,
-        "args": [],
-        "decorators": [
-            43
+        "parent": 1,
+        "args": [
+            [
+                "() => {",
+                "  notepad.iter = 0;",
+                "  notepad.slideshow=true;",
+                "}"
+            ]
         ]
     },
-    "43": {
-        "id": 43,
-        "class": "TimeoutSucceed",
+    "45": {
+        "id": 45,
+        "class": "WhileCondition",
         "name": "",
         "asset-pack": "core",
         "args": [
-            10000
+            [
+                "() => {",
+                "  return true;",
+                "}"
+            ],
+            [
+                "() => {",
+                "    return true;",
+                "}"
+            ]
+        ]
+    },
+    "46": {
+        "id": 46,
+        "class": "Parallel",
+        "name": "",
+        "asset-pack": "core",
+        "parent": 1,
+        "args": [
+            false
+        ],
+        "children": [
+            47,
+            26
+        ]
+    },
+    "47": {
+        "id": 47,
+        "class": "PlayAnimation",
+        "name": "",
+        "asset-pack": "core",
+        "parent": 46,
+        "args": [
+            "family_photos.keys",
+            [
+                "(animation) => {",
+                "}"
+            ]
+        ],
+        "decorators": [
+            49,
+            48
+        ]
+    },
+    "48": {
+        "id": 48,
+        "class": "WhileCondition",
+        "name": "",
+        "asset-pack": "core",
+        "args": [
+            [
+                "() => {",
+                "  ",
+                "}"
+            ],
+            [
+                "() => {",
+                "    return notepad.slideshow&&notepad.NLresult!=='hurt';",
+                "}"
+            ]
+        ]
+    },
+    "49": {
+        "id": 49,
+        "class": "SucceedOnEvent",
+        "name": "",
+        "asset-pack": "core",
+        "args": [
+            "fallen",
+            [
+                "() => {",
+                "}"
+            ]
+        ]
+    },
+    "50": {
+        "id": 50,
+        "class": "ExecuteScript",
+        "name": "",
+        "asset-pack": "core",
+        "parent": 33,
+        "args": [
+            [
+                "() => {",
+                "  notepad.NLresult=null;",
+                "}"
+            ]
         ]
     }
 }

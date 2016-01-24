@@ -5,44 +5,19 @@
         "name": "",
         "args": [],
         "children": [
-            2,
-            3
+            2
         ]
     },
     "2": {
         "id": 2,
-        "class": "LookAt",
+        "class": "PlayAnimation",
         "name": "",
         "asset-pack": "core",
         "parent": 1,
         "args": [
+            "practice.keys",
             [
-                "() => {",
-                "    return {x: 1, y: 1, z: 1};",
-                "}"
-            ],
-            false,
-            [
-                "(lookAt) => {",
-                "}"
-            ]
-        ]
-    },
-    "3": {
-        "id": 3,
-        "class": "LookAt",
-        "name": "",
-        "asset-pack": "core",
-        "parent": 1,
-        "args": [
-            [
-                "() => {",
-                "    return {x: 1, y: -1, z: 1};",
-                "}"
-            ],
-            false,
-            [
-                "(lookAt) => {",
+                "(animation) => {",
                 "}"
             ]
         ]
