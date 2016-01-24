@@ -353,7 +353,7 @@
             ],
             [
                 "() => {",
-                "    return notepad.slideshow&&notepad.NLresult!=='hurt';",
+                "    return notepad.slideshow;",
                 "}"
             ]
         ]

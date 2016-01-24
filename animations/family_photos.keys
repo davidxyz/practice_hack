@@ -1,7 +1,7 @@
 {
     "version": "0.5.0",
     "framerate": 30,
-    "duration": 800,
+    "duration": 750,
     "scale": 1,
     "layers": [
         {
@@ -101,17 +101,6 @@
             "keyframes": [
                 {
                     "value": {
-                        "Texture": "",
-                        "Color": {
-                            "r": 255,
-                            "g": 255,
-                            "b": 255
-                        }
-                    },
-                    "time": 0
-                },
-                {
-                    "value": {
                         "Texture": "animations/textures/images/fam_pic_5.png",
                         "Color": {
                             "r": 255,
@@ -119,7 +108,7 @@
                             "b": 255
                         }
                     },
-                    "time": 1
+                    "time": 0
                 },
                 {
                     "value": {
@@ -175,17 +164,6 @@
                         }
                     },
                     "time": 710
-                },
-                {
-                    "value": {
-                        "Texture": "",
-                        "Color": {
-                            "r": 255,
-                            "g": 255,
-                            "b": 255
-                        }
-                    },
-                    "time": 799
                 }
             ]
         },
